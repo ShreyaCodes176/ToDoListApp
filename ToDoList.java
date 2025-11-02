@@ -19,32 +19,31 @@ public class ToDoList extends Application {
     private final ObservableList<String> tasks = FXCollections.observableArrayList();
     private final String FILE_PATH = "tasks.txt";
 
-    @Override
     public void start(Stage stage) {
     stage.setTitle("To-Do List App");
 
-        // ---- Title ----
+    // ---- Title ----
     Label title = new Label("My To-Do List");
-        title.setFont(Font.font("Poppins", 24));
-        title.setTextFill(Color.web("#2c3e50"));
+    title.setFont(Font.font("Poppins", 24));
+    title.setTextFill(Color.web("#2c3e50"));
 
-        // ---- Input ----
-        TextField taskInput = new TextField();
-        taskInput.setPromptText("Enter a new task...");
-        taskInput.setFont(Font.font("Poppins", 14));
-        taskInput.setPrefWidth(400);
-        taskInput.setStyle("-fx-background-radius: 10; -fx-padding: 8;");
+    // ---- Input ----
+    TextField taskInput = new TextField();
+    taskInput.setPromptText("Enter a new task...");
+    taskInput.setFont(Font.font("Poppins", 14));
+    taskInput.setPrefWidth(400);
+    taskInput.setStyle("-fx-background-radius: 10; -fx-padding: 8;");
 
-        // ---- Buttons ----
+    // ---- Buttons ----
     Button addButton = makeButton("Add", "#27ae60");
     Button doneButton = makeButton("Done", "#2980b9");
     Button deleteButton = makeButton("Delete", "#c0392b");
 
-        HBox buttonBox = new HBox(10, addButton, doneButton, deleteButton);
-        buttonBox.setAlignment(Pos.CENTER);
-        buttonBox.setPadding(new Insets(10));
+    HBox buttonBox = new HBox(10, addButton, doneButton, deleteButton);
+    buttonBox.setAlignment(Pos.CENTER);
+    buttonBox.setPadding(new Insets(10));
 
-        // ---- Task List ----
+    // ---- Task List ----
     ListView<String> listView = new ListView<>(tasks);
     listView.setStyle(
         "-fx-font-family: 'Poppins';\n"
@@ -134,3 +133,4 @@ public class ToDoList extends Application {
         launch(args);
     }
 }
+
